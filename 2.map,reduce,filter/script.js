@@ -48,3 +48,34 @@ const mutiplyThree = nums.myMap((num, i, arr) => {
 });
 
 console.log(mutiplyThree);
+
+//5.polyfills for filter()
+Array.prototype.myFilter = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) temp.push(cb(this[i]));
+  }
+  return temp;
+};
+
+const nums1 = [1, 2, 3, 4];
+const moreThanTwo = nums1.myFilter((num) => {
+  return num > 2;
+});
+console.log(moreThanTwo);
+
+// polyfills reduce
+Array.prototype.myReduce = function (cb) {
+  var accumulator = initalValue;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator ? cb(accumulator, this[i], [i], this) : this[i];
+  }
+  return accumulator;
+};
+
+onst nums2 = [1, 2, 3, 4];
+
+const sum = nums2.myReduce((acc, curr, i, arr) => {
+  return acc + curr;
+}, 0);
+console.log(sum);
