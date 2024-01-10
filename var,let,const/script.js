@@ -58,3 +58,58 @@ function test() {
     console.log(g);
   }
 }
+test();
+
+//9.declaration
+var a;
+var a;
+let b;
+let b;   //error
+const c;
+const c;  //error
+
+
+//10. declaration without initialization
+var a;  //we can do
+let h;  // we can do
+const k;  //we can not declare without initialization
+
+
+// 10 initialization
+var a = 5;
+a=10 //we can do that
+let j = 5;
+j=10;  // we can do that 
+const l = 5;
+l=10;  //we cannot do that
+
+//notebook 
+//11. Hoisting
+// javascript engine moves your variable and function declaration to the top of your code and then  this is known as hoisting.
+console.log(count); // undefined
+var count = 1;
+
+console.log(count1);
+let count1 = 1 ; //error
+
+// 12. question on hoisting
+function abc(){
+  console.log(a);  //undefined 
+
+  var a =10;  
+}
+
+abc()
+
+//13. 
+function abc(){
+  console.log(a,b,c);  //undefined 
+
+ // temporal dead zone  meaning ->
+ // variable are in scope but not been declared
+
+  const c =30;  //temporal dead zone
+  let b =20;    //temporal dead zone
+  var a =10;  
+}
+abc()
