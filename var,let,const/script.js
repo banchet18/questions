@@ -45,3 +45,16 @@ function test() {
   console.log(a); // hello
 }
 test();
+
+//8. illegal shadowing
+function test() {
+  var f = "hello";
+  let g = "bye";
+
+  if (true) {
+    let f = "hi";
+    var g = "goodbye";
+    console.log(f);
+    console.log(g);
+  }
+}
