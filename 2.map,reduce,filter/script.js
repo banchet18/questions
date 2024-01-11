@@ -141,6 +141,6 @@ let student = [
 
 console.log(
   student.filter((x) => {
-    return x.marks > 60;
+    return x.marks > 60 && x.rollNumber > 15;
   })
 );
