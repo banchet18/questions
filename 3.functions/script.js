@@ -67,3 +67,12 @@ functionName();
 function functionName() {
   console.log("roadside Coder");
 }
+
+//Q9 - o/p based question
+var x = 21;
+var fun = function () {
+  console.log(x);
+  var x = 20;
+};
+fun(); //undefined
+//note temporal dead zone
