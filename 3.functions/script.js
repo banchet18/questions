@@ -103,9 +103,33 @@ fn(5, 6, 3, 7, 8, 9);
 const add = (firstNum, secondNum) => firstNum + secondNum;
 
 //Q14 arrow function vs regular function
+//1 diff syntax
 function square(num) {
   return num * num;
 }
 const square = (num) => {
   return num * num;
 };
+// 2nd diff Implicit 'return' keyword
+const square = (num) => num * num;
+// 3rd diff arguments
+function fn() {
+  console.log(arguments);
+}
+fn(1, 2, 3); //getting o/p
+const funArr = () => {
+  console.log(arguments);
+};
+fn(1, 2, 3); //error
+//4th diff -'this' keyword
+let user = {
+  username: "Roadside Coder",
+  rc1: () => {
+    console.log("subscribe to" + this.username);
+  },
+  rc2: () => {
+    console.log("subscribe to" + this.username);
+  },
+};
+user.rc1(); //undefine
+user.rc2(); // subscribe to roadside coder
