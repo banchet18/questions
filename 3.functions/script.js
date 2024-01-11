@@ -54,7 +54,8 @@ function getScore() {
 getScore();
 
 //Q7 function Scope - o/p based Question
-for (let i = 0; i < array.length; i++) {
+//what will be output when we write var instead of let
+for (let i = 0; i < 5; i++) {
   setTimeout(function () {
     console.log(i);
   }, i * 1000);
