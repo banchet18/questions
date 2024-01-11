@@ -95,5 +95,17 @@ const fn = (a, x, y, ...numbers) => {
   console.log(x, y);
 };
 
-fn(5, 6, 3, 7);
+fn(5, 6, 3, 7, 8, 9);
 //note rest operator must be last
+
+//Q12 what is callback function
+//Q13 what is arrow function
+const add = (firstNum, secondNum) => firstNum + secondNum;
+
+//Q14 arrow function vs regular function
+function square(num) {
+  return num * num;
+}
+const square = (num) => {
+  return num * num;
+};
