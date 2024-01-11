@@ -1,6 +1,5 @@
-var x = 21;
-var fun = function () {
-  console.log(x);
-  var x = 20;
+const fn = (a, x, y, ...numbers) => {
+  console.log(x, y);
 };
-fun();
+
+fn(5, 6, 3, 7);

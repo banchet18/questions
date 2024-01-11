@@ -89,3 +89,11 @@ function multiply(...nums) {
 }
 var arr = [5, 6];
 multiply(...arr);
+
+//Q11 - find output
+const fn = (a, x, y, ...numbers) => {
+  console.log(x, y);
+};
+
+fn(5, 6, 3, 7);
+//note rest operator must be last
