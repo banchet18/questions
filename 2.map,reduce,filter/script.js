@@ -95,7 +95,7 @@ console.log(mapResult, forEachResult, arr);
 
 //8. map,filter and reduce - o/p based questions
 //question1 - return only name of student in capital
-let student = [
+let students = [
   { name: "piyuysh", rollNumber: 31, marks: 80 },
   { name: "jenny", rollNumber: 15, marks: 68 },
   { name: "Kaushal", rollNumber: 16, marks: 35 },
@@ -117,7 +117,7 @@ console.log(
 
 //9. map,filter and reduce - o/p based questions
 //question2 - return only details of those who scored more than 60
-let student = [
+let students = [
   { name: "piyuysh", rollNumber: 31, marks: 80 },
   { name: "jenny", rollNumber: 15, marks: 68 },
   { name: "Kaushal", rollNumber: 16, marks: 35 },
@@ -125,14 +125,14 @@ let student = [
 ];
 
 console.log(
-  student.filter((x) => {
+  students.filter((x) => {
     return x.marks > 60;
   })
 );
 
 //10. map,filter and reduce - o/p based questions
-//question2 - More than 60 marks and rollNumber greater than 15
-let student = [
+//question3 - More than 60 marks and rollNumber greater than 15
+let students = [
   { name: "piyuysh", rollNumber: 31, marks: 80 },
   { name: "jenny", rollNumber: 15, marks: 68 },
   { name: "Kaushal", rollNumber: 16, marks: 35 },
@@ -140,7 +140,58 @@ let student = [
 ];
 
 console.log(
-  student.filter((x) => {
+  students.filter((x) => {
     return x.marks > 60 && x.rollNumber > 15;
   })
+);
+
+//10. map,filter and reduce - o/p based questions
+//question4 - sum of marks of all students
+let students = [
+  { name: "piyuysh", rollNumber: 31, marks: 80 },
+  { name: "jenny", rollNumber: 15, marks: 68 },
+  { name: "Kaushal", rollNumber: 16, marks: 35 },
+  { name: "dilpreet", rollNumber: 7, marks: 55 },
+];
+console.log(
+  students.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.marks;
+  }, 0)
+);
+
+//10. map,filter and reduce - o/p based questions
+//question5- return only names of student who scored more than 60
+console.log(
+  students
+    .filter((x) => {
+      return x.marks > 60;
+    })
+    .map((x) => {
+      return x.name;
+    })
+);
+
+//11. map,filter and reduce - o/p based questions
+//question6- return total marks for students with marks greater than 60 after 20 marks have been added to those who scored less than 60
+let students = [
+  { name: "piyuysh", rollNumber: 31, marks: 80 },
+  { name: "jenny", rollNumber: 15, marks: 68 },
+  { name: "Kaushal", rollNumber: 16, marks: 35 },
+  { name: "dilpreet", rollNumber: 7, marks: 55 },
+];
+
+console.log(
+  students
+    .map((student) => {
+      if (student.marks < 60) {
+        student.marks = student.marks + 20;
+      }
+      return student;
+    })
+    .filter((x) => {
+      return x.marks > 60;
+    })
+    .reduce((acc, cur) => {
+      return acc + cur.marks;
+    }, 0)
 );
