@@ -60,3 +60,10 @@ for (let i = 0; i < 5; i++) {
     console.log(i);
   }, i * 1000);
 }
+
+//Q8 - function hoisting
+functionName();
+
+function functionName() {
+  console.log("roadside Coder");
+}
