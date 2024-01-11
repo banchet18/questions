@@ -52,3 +52,10 @@ function getScore() {
   return add();
 }
 getScore();
+
+//Q7 function Scope - o/p based Question
+for (let i = 0; i < array.length; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, i * 1000);
+}
