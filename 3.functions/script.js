@@ -68,7 +68,7 @@ function functionName() {
   console.log("roadside Coder");
 }
 
-//Q9 - o/p based question
+//Q9 - o/p based question tricky question
 var x = 21;
 var fun = function () {
   console.log(x);
@@ -76,3 +76,16 @@ var fun = function () {
 };
 fun(); //undefined
 //note temporal dead zone
+
+//Q10 - params vs arguments
+function square(num) {
+  //params
+  console.log(num * num);
+}
+square(5); //arguments
+
+function multiply(...nums) {
+  console.log(nums[0] * nums[1]);
+}
+var arr = [5, 6];
+multiply(...arr);
