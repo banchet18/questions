@@ -32,3 +32,23 @@ displaySquare(square);
   })(2);
 })(1);
 // o/p - 1
+
+//Q6- function scopre
+var num1 = 20;
+num2 = 3;
+name = "roadside Coder";
+
+function multipy() {
+  return num1 * num2;
+}
+multipy();
+
+function getScore() {
+  var num1 = 2;
+  num2 = 3;
+  function add() {
+    return name + "scored" + (num1 + num2);
+  }
+  return add();
+}
+getScore();
