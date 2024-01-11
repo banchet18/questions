@@ -64,7 +64,7 @@ const moreThanTwo = nums1.myFilter((num) => {
 });
 console.log(moreThanTwo);
 
-// polyfills reduce
+//6. polyfills reduce
 Array.prototype.myReduce = function (cb) {
   var accumulator = initalValue;
   for (let i = 0; i < this.length; i++) {
@@ -73,9 +73,35 @@ Array.prototype.myReduce = function (cb) {
   return accumulator;
 };
 
-onst nums2 = [1, 2, 3, 4];
+const nums2 = [1, 2, 3, 4];
 
 const sum = nums2.myReduce((acc, curr, i, arr) => {
   return acc + curr;
 }, 0);
 console.log(sum);
+
+// 7. map vs reduce
+const arr = [2, 5, 3, 4, 7];
+const mapResult = arr.map((ar) => {
+  return ar + 2; //[4,7,5,7,9]
+});
+// we can chain the map method
+
+const forEachResult = arr.forEach((ar, i) => {
+  arr[i] = ar + 3; // [5,8,6,7,10]
+});
+
+console.log(mapResult, forEachResult, arr);
+
+//8. map,filter and reduce - o/p based questions
+//question1
+let student = [
+  { name: "piyuysh", rollNumber: 31, marks: 8 },
+  { name: "jenny", rollNumber: 15, marks: 68 },
+  { name: "Kaushal", rollNumber: 16, marks: 35 },
+  { name: "dilpreet", rollNumber: 7, marks: 55 },
+];
+
+student.map((x) => {
+  return;
+});
